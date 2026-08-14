@@ -17,10 +17,7 @@ exports.handler = async (event) => {
       };
     }
 
-    const indexPath = path.join(
-      process.cwd(),
-      "../backend/data/index.json"
-    );
+    const indexPath = path.join(process.cwd(), "data/index.json");
 
     if (!fs.existsSync(indexPath)) {
       return {
