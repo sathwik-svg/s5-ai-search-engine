@@ -24,11 +24,20 @@ function App() {
     setSearched(true);
 
     try {
-      const response = await fetch(
-        `${API}/api/v1/search?query=${encodeURIComponent(query)}`
-      );
+      const response = await fetch(`${API}/api/v1/search`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          query,
+          limit: 10
+        })
+      });
 
-      if (!response.ok) throw new Error("Search failed");
+      if (!response.ok) {
+        throw new Error("Search API request failed");
+      }
 
       const data = await response.json();
       setResults(data.results || []);
