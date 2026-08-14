@@ -16,6 +16,9 @@ function App() {
   const [results, setResults] = useState<Result[]>([]);
   const [loading, setLoading] = useState(false);
   const [searched, setSearched] = useState(false);
+  const [uploading, setUploading] = useState(false);
+  const [message, setMessage] = useState("");
+  const [answer, setAnswer] = useState("");
 
   async function search() {
     if (!query.trim()) return;
@@ -45,6 +48,33 @@ function App() {
       setResults([]);
     } finally {
       setLoading(false);
+    }
+  }
+
+  async function upload(file: File) {
+    setUploading(true);
+    setMessage("");
+
+    const form = new FormData();
+    form.append("file", file);
+
+    try {
+      const response = await fetch(`${API}/api/v1/ingest/file`, {
+        method: "POST",
+        body: form
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.detail || "Upload failed");
+      }
+
+      setMessage(`Indexed ${data.chunks} document chunks`);
+    } catch (error) {
+      setMessage(error instanceof Error ? error.message : "Upload failed");
+    } finally {
+      setUploading(false);
     }
   }
 
@@ -97,6 +127,22 @@ function App() {
           </button>
         </form>
 
+        <div className="upload">
+          <label>
+            {uploading ? "Indexing document..." : "＋ Upload PDF / TXT / MD"}
+            <input
+              type="file"
+              accept=".pdf,.txt,.md,.markdown"
+              disabled={uploading}
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (file) upload(file);
+              }}
+            />
+          </label>
+          {message && <span>{message}</span>}
+        </div>
+
         {!searched && (
           <div className="chips">
             {["Cloud architecture", "Kubernetes", "DevOps", "AI systems"].map(
@@ -117,6 +163,18 @@ function App() {
 
       {searched && (
         <section className="results">
+          {results.length > 0 && (
+            <div className="answer">
+              <span className="eyebrow">S5 AI SUMMARY</span>
+              <h2>Relevant knowledge found</h2>
+              <p>
+                S5 retrieved {results.length} relevant knowledge sources
+                using lightweight ranked retrieval. The strongest matches
+                are shown below with their relevance scores and sources.
+              </p>
+            </div>
+          )}
+
           <div className="resultHeader">
             <div>
               <span className="eyebrow">SEARCH RESULTS</span>
