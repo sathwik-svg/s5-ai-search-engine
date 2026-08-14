@@ -163,15 +163,18 @@ function App() {
 
       {searched && (
         <section className="results">
-          {results.length > 0 && (
+          {searched && answer && (
             <div className="answer">
-              <span className="eyebrow">S5 AI SUMMARY</span>
-              <h2>Relevant knowledge found</h2>
-              <p>
-                S5 retrieved {results.length} relevant knowledge sources
-                using lightweight ranked retrieval. The strongest matches
-                are shown below with their relevance scores and sources.
-              </p>
+              <span className="eyebrow">S5 AI ANSWER</span>
+              <h2>Grounded search summary</h2>
+              <p>{answer}</p>
+              <div className="citationRow">
+                {results.slice(0, 4).map((r, i) => (
+                  <span key={r.source}>
+                    [{i + 1}] {r.title}
+                  </span>
+                ))}
+              </div>
             </div>
           )}
 

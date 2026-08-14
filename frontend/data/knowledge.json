@@ -1,0 +1,50 @@
+[
+  {
+    "title":"Kubernetes",
+    "text":"Kubernetes is an open-source container orchestration platform used to automate deployment, scaling and management of containerized applications. Kubernetes uses clusters, nodes, pods, deployments, services, ConfigMaps and Secrets to operate cloud-native workloads.",
+    "source":"Kubernetes Knowledge Base",
+    "tags":["kubernetes","containers","cloud","devops","docker"]
+  },
+  {
+    "title":"Docker",
+    "text":"Docker packages applications and their dependencies into lightweight containers. Containers provide consistent environments across development, testing and production and are commonly used with CI/CD and Kubernetes.",
+    "source":"Docker Knowledge Base",
+    "tags":["docker","containers","devops","cloud"]
+  },
+  {
+    "title":"AWS Cloud",
+    "text":"Amazon Web Services provides cloud infrastructure and managed services including EC2, S3, IAM, VPC, Lambda, RDS and CloudWatch. AWS enables scalable and highly available cloud architectures.",
+    "source":"AWS Knowledge Base",
+    "tags":["aws","cloud","ec2","s3","lambda","iam"]
+  },
+  {
+    "title":"DevOps",
+    "text":"DevOps combines development and operations practices to automate software delivery. CI/CD pipelines, infrastructure as code, containers, monitoring and automated testing are important DevOps practices.",
+    "source":"DevOps Knowledge Base",
+    "tags":["devops","cicd","automation","cloud","github"]
+  },
+  {
+    "title":"Cloud Architecture",
+    "text":"Cloud architecture combines compute, networking, storage, databases, security, observability and automation. Good cloud architecture focuses on reliability, scalability, security, performance and cost optimization.",
+    "source":"Cloud Architecture Knowledge Base",
+    "tags":["cloud","architecture","aws","networking","security"]
+  },
+  {
+    "title":"CI/CD",
+    "text":"Continuous Integration and Continuous Delivery automate building, testing and deploying software. GitHub Actions and other CI/CD systems can automatically validate code and deploy applications after changes are pushed.",
+    "source":"CI/CD Knowledge Base",
+    "tags":["cicd","github","automation","devops"]
+  },
+  {
+    "title":"Terraform",
+    "text":"Terraform is an infrastructure as code tool that allows engineers to define cloud and infrastructure resources using configuration files. Terraform supports repeatable infrastructure provisioning and automation.",
+    "source":"Infrastructure as Code Knowledge Base",
+    "tags":["terraform","iac","aws","cloud","devops"]
+  },
+  {
+    "title":"Cloud Security",
+    "text":"Cloud security protects infrastructure, applications, identities and data. Important practices include least privilege IAM, encryption, network segmentation, secrets management, logging, monitoring and continuous security validation.",
+    "source":"Cloud Security Knowledge Base",
+    "tags":["security","iam","cloud","aws","networking"]
+  }
+]

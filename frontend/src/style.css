@@ -415,3 +415,19 @@ footer {
   color: #929db1;
   line-height: 1.7;
 }
+
+.citationRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.citationRow span {
+  padding: 6px 10px;
+  border: 1px solid rgba(112,133,255,.18);
+  border-radius: 999px;
+  color: #8ea4ff;
+  background: rgba(93,117,255,.06);
+  font-size: 11px;
+}
