@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Cloud Computing",
+    "text": "Cloud computing provides on-demand access to computing resources including servers, storage, databases, networking and applications.",
+    "source": "sample-cloud"
+  },
+  {
+    "title": "Kubernetes",
+    "text": "Kubernetes is an open-source platform for automating deployment, scaling and management of containerized applications.",
+    "source": "sample-kubernetes"
+  },
+  {
+    "title": "DevOps",
+    "text": "DevOps combines software development and operations practices to improve automation, collaboration, delivery speed and reliability.",
+    "source": "sample-devops"
+  }
+]
