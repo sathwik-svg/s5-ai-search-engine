@@ -4,6 +4,7 @@ from app.ingestion.indexer import DocumentIndexer
 from app.search.engine import SearchEngine
 from app.search.hybrid import HybridSearch
 from app.api.ingestion import router as ingestion_router
+from app.api.rag import router as rag_router
 
 app = FastAPI(
     title="S5 AI Search Engine",
@@ -50,3 +51,5 @@ def hybrid_search(request: SearchRequest):
 
 
 app.include_router(ingestion_router)
+
+app.include_router(rag_router)
