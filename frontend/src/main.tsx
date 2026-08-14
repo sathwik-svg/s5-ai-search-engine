@@ -9,7 +9,7 @@ type Result = {
   score: number;
 };
 
-const API = import.meta.env.VITE_API_URL || "http://localhost:8000";
+const API = "";
 
 function App() {
   const [query, setQuery] = useState("");
@@ -27,7 +27,7 @@ function App() {
     setSearched(true);
 
     try {
-      const response = await fetch(`${API}/api/v1/search`, {
+      const response = await fetch(`/api/search`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
