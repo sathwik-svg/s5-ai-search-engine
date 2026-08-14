@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: s5-ai-search-engine-api
+    runtime: docker
+    rootDir: backend
+    plan: free
